@@ -75,12 +75,12 @@ class UsersController {
   }
   async me(req, res, next) {
     try {
-      //On récupère les informations à propos de l'utilsateur
+      //Je récupère les informations à propos de l'utilisateur
       const user = await usersService.get(req.user.userId);
       if (!user) {
         throw new NotFoundError();
       }
-      //envoie des données
+      //J'envoie les données
       res.json(user);
 
     } catch (error) {
